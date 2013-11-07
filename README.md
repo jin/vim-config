@@ -1,4 +1,5 @@
 Package manager: NeoBundle
+
 Current plugins:
 * Shougo/vimproc
 * tpope/vim-fugitive
