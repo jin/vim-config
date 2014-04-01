@@ -1,10 +1,15 @@
+set nocompatible
 set nonumber
 set relativenumber
 set encoding=utf-8
+set laststatus=2 "Needed for Powerline
 set mouse=a
 
-set backupdir=~/.vim/backup
-set directory=~/.vim/backup
+set nobackup
+" no viminfo files
+set viminfo=
+" set backupdir=~/.vim/backup
+" set directory=~/.vim/backup
 
 "" Whitespace stuff
 set nowrap
@@ -12,6 +17,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set smarttab "" Indent start of lines with shiftwidth, not tabstop
 
 "" Searching stuff
 set hlsearch
@@ -19,17 +25,39 @@ set incsearch
 set ignorecase
 set smartcase
 
+"" Soft wrap long lines
+set wrap
+
 "" Highlight trailing whitespaces
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+"set list
+"set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 "" ..but don't do that in html and xml files
 autocmd filetype html,xml set listchars-=tab:>.
+
+"" For markdown and text files
+autocmd BufRead,BufNewFile *.md,*.txt,*.mdown,*.markdown setlocal spell spelllang=en_us textwidth=79 complete+=kspell
+
 
 "" Python PEP8 style
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
 "" Use system clipboard
 set clipboard=unnamed
+
+"" Persistent undo
+set undofile
+set undodir=/tmp/
+
+"" MacVim default font and size
+set guifont=Monaco:h12
+
+"" No error and visual bells
+set noerrorbells
+set visualbell t_vb=
+
+"" Keep at least 5 lines around cursor
+set scrolloff=5
 
 """"""""""""""""""""
 """Keymappings :D"""
@@ -38,7 +66,7 @@ set clipboard=unnamed
 let mapleader = ","
 
 "" Remap ESC
-imap kj <Esc>
+" imap kj <Esc>
 
 "" Maintain selection after indentation
 vmap > >gv
@@ -96,7 +124,6 @@ map yA :%y+<CR>
 "" open ctags bar
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
-
 "" Command-T
 let g:CommandTMaxHeight=5
 
@@ -123,7 +150,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'git://git.wincent.com/command-t.git'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'vim-scripts/AutoComplPop'
@@ -137,12 +163,15 @@ NeoBundle "vim-scripts/Colour-Sampler-Pack"
 NeoBundle "haskell.vim"
 NeoBundle "tpope/vim-commentary"
 NeoBundle "majutsushi/tagbar"
+NeoBundle "Lokaltog/vim-powerline"
+" NeoBundle "Valloric/YouCompleteMe"
+NeoBundle "othree/javascript-libraries-syntax.vim"
 
 filetype plugin indent on
 syntax enable
 
 "" Default color scheme
-colorscheme desertEx 
+colorscheme darkburn 
 
 " Installation check.
 NeoBundleCheck
