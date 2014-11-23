@@ -6,14 +6,17 @@ set encoding=utf-8
 set laststatus=2 "Needed for Powerline
 set mouse=a
 
+" Suppress default message at launch
+set shortmess+=I
+
 " Increase performance when dealing with long strings
 set lazyredraw
 
-set nobackup
+" set nobackup
 " no viminfo files
 set viminfo=
-" set backupdir=~/.vim/backup
-" set directory=~/.vim/backup
+set backupdir=/tmp
+set directory=/tmp
 
 "" Whitespace stuff
 set tabstop=2
@@ -21,6 +24,13 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set smarttab "" Indent start of lines with shiftwidth, not tabstop
+
+"" Nicer autocomplete in command mode
+set wildmode=longest,list
+
+
+" Allow backspace to work everywhere
+set backspace=indent,eol,start
 
 "" Enable vim omnicompletion
 set omnifunc=syntaxcomplete#Complete
@@ -52,7 +62,7 @@ set clipboard=unnamed
 
 "" Persistent undo
 set undofile
-set undodir=/tmp/
+set undodir=/tmp
 
 "" MacVim default font and size
 set guifont=Inconsolata-dz:h12
@@ -63,6 +73,10 @@ set visualbell t_vb=
 
 "" Keep at least 5 lines around cursor
 set scrolloff=5
+
+"" Set vsp and sp to open a new pane to the right and below by default
+set splitbelow
+set splitright
 
 """""""""""""""""""
 """"Keymappings""""
@@ -159,7 +173,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'Shougo/vimproc'
+" NeoBundle 'Shougo/vimproc'
 
 " Git wrapper, needed for powerline
 NeoBundle 'tpope/vim-fugitive'
