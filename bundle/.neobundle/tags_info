@@ -1,12 +1,12 @@
 Colour-Sampler-Pack
 EasyGrep
-YouCompleteMe
 ctrlp.vim
 delimitMate
 emmet-vim
 gruvbox
 hasksyn
 neobundle.vim
+neocomplete.vim
 nerdtree
 netrw
 rust.vim

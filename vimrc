@@ -28,7 +28,6 @@ set smarttab "" Indent start of lines with shiftwidth, not tabstop
 "" Nicer autocomplete in command mode
 set wildmode=longest,list
 
-
 " Allow backspace to work everywhere
 set backspace=indent,eol,start
 
@@ -155,6 +154,9 @@ let g:tagbar_width = 30
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+"" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+
 " Rails autocomplete
 " let g:rubycomplete_rails = 1
 
@@ -206,14 +208,14 @@ NeoBundle "Lokaltog/vim-powerline"
 " syntax highlighting/indentation etc for Rust lang
 NeoBundle "wting/rust.vim"
 
-" fuzzy file finder 
+" fuzzy file finder
 NeoBundle "kien/ctrlp.vim"
 
 " for ruby on rails
-NeoBundle "tpope/vim-rails"                 
+NeoBundle "tpope/vim-rails"
 
-" for bundler 
-NeoBundle "tpope/vim-bundler"                 
+" for bundler
+NeoBundle "tpope/vim-bundler"
 
 " for ruby handling and autocompletion
 NeoBundle "vim-ruby/vim-ruby"
@@ -221,7 +223,8 @@ NeoBundle "vim-ruby/vim-ruby"
 " autocompletion
 " NeoBundle "vim-scripts/AutoComplPop"
 " NeoBundle "ervandew/supertab"
-NeoBundle "Valloric/YouCompleteMe"
+" NeoBundle "Valloric/YouCompleteMe"
+NeoBundle "Shougo/neocomplete.vim"
 
 " for ruby
 NeoBundle "tpope/vim-endwise"
