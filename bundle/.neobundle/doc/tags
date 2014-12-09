@@ -510,6 +510,9 @@ ctrlp-mappings	ctrlp.txt	/*ctrlp-mappings*
 ctrlp-miscellaneous-configs	ctrlp.txt	/*ctrlp-miscellaneous-configs*
 ctrlp-options	ctrlp.txt	/*ctrlp-options*
 ctrlp.txt	ctrlp.txt	/*ctrlp.txt*
+cx	exchange.txt	/*cx*
+cxc	exchange.txt	/*cxc*
+cxx	exchange.txt	/*cxx*
 dav	pi_netrw.txt	/*dav*
 davs	pi_netrw.txt	/*davs*
 delimitMate	delimitMate.txt	/*delimitMate*
@@ -566,6 +569,19 @@ emmet-tutorial	emmet.txt	/*emmet-tutorial*
 emmet-update-image-size	emmet.txt	/*emmet-update-image-size*
 emmet-wrap-with-abbreviation	emmet.txt	/*emmet-wrap-with-abbreviation*
 emmet.txt	emmet.txt	/*emmet.txt*
+exchange	exchange.txt	/*exchange*
+exchange-:ExchangeClear	exchange.txt	/*exchange-:ExchangeClear*
+exchange-clear	exchange.txt	/*exchange-clear*
+exchange-commands	exchange.txt	/*exchange-commands*
+exchange-define	exchange.txt	/*exchange-define*
+exchange-define-line	exchange.txt	/*exchange-define-line*
+exchange-examples	exchange.txt	/*exchange-examples*
+exchange-issues	exchange.txt	/*exchange-issues*
+exchange-mappings	exchange.txt	/*exchange-mappings*
+exchange-settings	exchange.txt	/*exchange-settings*
+exchange-todo	exchange.txt	/*exchange-todo*
+exchange-visual	exchange.txt	/*exchange-visual*
+exchange.txt	exchange.txt	/*exchange.txt*
 faked-function-reference	funcref.txt	/*faked-function-reference*
 fetch	pi_netrw.txt	/*fetch*
 filter-overrides	syntastic.txt	/*filter-overrides*
@@ -649,6 +665,7 @@ g:ctrlp_mru_files	ctrlp.txt	/*g:ctrlp_mru_files*
 g:ctrlp_open_multi	ctrlp.txt	/*g:ctrlp_open_multi*
 g:ctrlp_persistent_input	ctrlp.txt	/*g:ctrlp_persistent_input*
 g:ctrlp_regexp_search	ctrlp.txt	/*g:ctrlp_regexp_search*
+g:exchange_no_mappings	exchange.txt	/*g:exchange_no_mappings*
 g:ftplugin_rust_source_path	rust.txt	/*g:ftplugin_rust_source_path*
 g:gem_projections	bundler.txt	/*g:gem_projections*
 g:neobundle#default_options	neobundle.txt	/*g:neobundle#default_options*
@@ -1828,6 +1845,7 @@ unite-action-neobundle-lazy	neobundle.txt	/*unite-action-neobundle-lazy*
 unite-action-neobundle-search	neobundle.txt	/*unite-action-neobundle-search*
 unite-kind-neobundle	neobundle.txt	/*unite-kind-neobundle*
 v_<C-Y>,	emmet.txt	/*v_<C-Y>,*
+v_X	exchange.txt	/*v_X*
 v_gc	commentary.txt	/*v_gc*
 v_sp	tlib.txt	/*v_sp*
 vim-nerdtree-tabs	vim-nerdtree-tabs.txt	/*vim-nerdtree-tabs*

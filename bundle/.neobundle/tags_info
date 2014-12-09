@@ -19,6 +19,7 @@ vim-bundler
 vim-coffee-script
 vim-commentary
 vim-endwise
+vim-exchange
 vim-fugitive
 vim-javascript-syntax
 vim-json

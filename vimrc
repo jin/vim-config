@@ -272,6 +272,9 @@ NeoBundle "slim-template/vim-slim"
 " Pretty JSON
 NeoBundle "elzr/vim-json"
 
+" Exchange regions of words with cx
+NeoBundle "tommcdo/vim-exchange"
+
 filetype plugin indent on
 syntax enable
 
