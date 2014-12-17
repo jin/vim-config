@@ -278,7 +278,7 @@ NeoBundle "tommcdo/vim-exchange"
 filetype plugin indent on
 syntax enable
 
-colorscheme darkburn
+colorscheme pyte
 
 " Installation check.
 NeoBundleCheck
