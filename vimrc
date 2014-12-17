@@ -134,6 +134,14 @@ map <Leader>p <C-^>
 "" Yank whole file
 map yA :%y+<CR>
 
+"" For rcodetools/xmpfilter ruby inline evaluation
+nmap <buffer> <Leader>r <Plug>(xmpfilter-run)
+xmap <buffer> <Leader>r <Plug>(xmpfilter-run)
+imap <buffer> <Leader>r <Plug>(xmpfilter-run)
+nmap <buffer> <Leader>m <Plug>(xmpfilter-mark)
+xmap <buffer> <Leader>m <Plug>(xmpfilter-mark)
+imap <buffer> <Leader>m <Plug>(xmpfilter-mark)
+
 """""""""""""
 """Plugins"""
 """""""""""""
@@ -274,6 +282,9 @@ NeoBundle "elzr/vim-json"
 
 " Exchange regions of words with cx
 NeoBundle "tommcdo/vim-exchange"
+
+" Inline Ruby evaluation
+NeoBundle "t9md/vim-ruby-xmpfilter"
 
 filetype plugin indent on
 syntax enable

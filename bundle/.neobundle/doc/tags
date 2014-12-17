@@ -916,6 +916,7 @@ g:tlib_tag_substitute	tlib.txt	/*g:tlib_tag_substitute*
 g:tlib_tags_extra	tlib.txt	/*g:tlib_tags_extra*
 g:tlib_viewline_position	tlib.txt	/*g:tlib_viewline_position*
 g:unite_source_neobundle_install_max_processes	neobundle.txt	/*g:unite_source_neobundle_install_max_processes*
+g:xmpfilter_cmd	xmpfilter.txt	/*g:xmpfilter_cmd*
 gc	commentary.txt	/*gc*
 gcc	commentary.txt	/*gcc*
 gcgc	commentary.txt	/*gcgc*
@@ -1850,3 +1851,10 @@ v_gc	commentary.txt	/*v_gc*
 v_sp	tlib.txt	/*v_sp*
 vim-nerdtree-tabs	vim-nerdtree-tabs.txt	/*vim-nerdtree-tabs*
 vim-ruby.txt	vim-ruby.txt	/*vim-ruby.txt*
+xmpfilter-changelog	xmpfilter.txt	/*xmpfilter-changelog*
+xmpfilter-commands	xmpfilter.txt	/*xmpfilter-commands*
+xmpfilter-contents	xmpfilter.txt	/*xmpfilter-contents*
+xmpfilter-examples	xmpfilter.txt	/*xmpfilter-examples*
+xmpfilter-introduction	xmpfilter.txt	/*xmpfilter-introduction*
+xmpfilter-mappings	xmpfilter.txt	/*xmpfilter-mappings*
+xmpfilter-variables	xmpfilter.txt	/*xmpfilter-variables*
