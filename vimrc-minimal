@@ -1,0 +1,152 @@
+" NeoBundle
+" ---------------------------------------------
+
+set nocompatible
+set number relativenumber
+set encoding=utf-8
+set laststatus=2 " Needed for Powerline
+set mouse=a
+set cinkeys-=0#
+set indentkeys-=0#
+
+" Suppress default message at launch
+set shortmess+=I
+
+" Increase performance when dealing with long strings
+set lazyredraw
+
+" set nobackup
+" no viminfo files
+set viminfo=
+set backupdir=/tmp
+set directory=/tmp
+
+"" Whitespace stuff
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set smarttab "" Indent start of lines with shiftwidth, not tabstop
+
+"" Nicer autocomplete in command mode
+set wildmode=longest,list
+
+" Allow backspace to work everywhere
+set backspace=indent,eol,start
+
+"" Enable vim omnicompletion
+set omnifunc=syntaxcomplete#Complete
+
+"" Soft wrap long lines
+set wrap
+
+"" Searching stuff
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+"" Highlight trailing whitespaces
+"set list
+"set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+"" ..but don't do that in html and xml files
+autocmd filetype html,xml set listchars-=tab:>.
+
+"" For markdown and text files
+" autocmd BufRead,BufNewFile *.md,*.txt,*.mdown,*.markdown setlocal spell spelllang=en_us textwidth=79 complete+=kspell
+autocmd BufRead,BufNewFile *.md,*.txt,*.mdown,*.markdown setlocal textwidth=79 complete+=kspell
+
+"" Python PEP8 style
+au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+
+"" Java style
+au FileType java set softtabstop=4 tabstop=4 shiftwidth=4
+
+"" Use system clipboard
+set clipboard=unnamed
+
+"" Persistent undo
+set undofile
+set undodir=/tmp
+
+"" No error and visual bells
+set noerrorbells
+set visualbell t_vb=
+
+"" Keep at least 5 lines around cursor
+set scrolloff=5
+
+"" Set vsp and sp to open a new pane to the right and below by default
+set splitbelow
+set splitright
+
+"""""""""""""""""""
+""""Keymappings""""
+"""""""""""""""""""
+"" Set <leader> to ','
+let mapleader = ","
+
+"" Remap ESC
+" imap kj <Esc>
+
+"" Maintain selection after indentation
+vmap > >gv
+vmap < <gv
+
+"" Moves cursor to the midscreen while going through search terms
+nnoremap N Nzz
+nnoremap n nzz
+
+"" Quicker window switching
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+"" Split windows specified explicitly
+nnoremap <C-w>s :sp<cr>
+
+"" Set ':' to ';'
+nnoremap ; :
+
+"" 'j' and 'k' as they should be
+nnoremap j gj
+nnoremap k gk
+
+"" No arrow keys for vimmers!
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
+
+"" Remove all trialing whitespaces from file
+nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
+
+"" Turn off highlighting after search
+map <leader><space> :noh<CR>
+
+"" Execute script
+nnoremap <F8><F8> :!./%<CR>
+
+"" Sudo write a file
+cmap w!! w !sudo tee % >/dev/null
+
+"" Go to previous file
+map <Leader>p <C-^>
+
+"" Yank whole file
+map yA :%y+<CR>
+
+"""""""""""""
+"""Plugins"""
+"""""""""""""
+
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/node_modules/*
+
+autocmd BufRead,BufNewFile *.cu set filetype=cpp
+
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+
+filetype plugin indent on
+syntax enable
