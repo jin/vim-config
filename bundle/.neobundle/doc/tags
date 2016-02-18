@@ -709,9 +709,11 @@ bundler-api	bundler.txt	/*bundler-api*
 bundler-commands	bundler.txt	/*bundler-commands*
 bundler-projectionist	bundler.txt	/*bundler-projectionist*
 bundler.txt	bundler.txt	/*bundler.txt*
+cS	surround.txt	/*cS*
 cached_file_contents	cached_file_contents.txt	/*cached_file_contents*
 commentary.txt	commentary.txt	/*commentary.txt*
 config/rails.vim	rails.txt	/*config\/rails.vim*
+cs	surround.txt	/*cs*
 ctrlp-changelog	ctrlp.txt	/*ctrlp-changelog*
 ctrlp-commands	ctrlp.txt	/*ctrlp-commands*
 ctrlp-contents	ctrlp.txt	/*ctrlp-contents*
@@ -758,6 +760,7 @@ delimitMateSyntax	delimitMate.txt	/*delimitMateSyntax*
 delimitMateTodo	delimitMate.txt	/*delimitMateTodo*
 delimitMate_map	delimitMate.txt	/*delimitMate_map*
 delimitMate_unmap	delimitMate.txt	/*delimitMate_unmap*
+ds	surround.txt	/*ds*
 easy-align	easy_align.txt	/*easy-align*
 easy-align-1	easy_align.txt	/*easy-align-1*
 easy-align-1-using-plug-mappings	easy_align.txt	/*easy-align-1-using-plug-mappings*
@@ -1420,6 +1423,8 @@ i_<Plug>(unite_toggle_auto_preview)	unite.txt	/*i_<Plug>(unite_toggle_auto_previ
 i_<Plug>(unite_toggle_mark_current_candidate)	unite.txt	/*i_<Plug>(unite_toggle_mark_current_candidate)*
 i_<Plug>(unite_toggle_mark_current_candidate_up)	unite.txt	/*i_<Plug>(unite_toggle_mark_current_candidate_up)*
 i_<Plug>(unite_toggle_transpose_window)	unite.txt	/*i_<Plug>(unite_toggle_transpose_window)*
+i_CTRL-G_S	surround.txt	/*i_CTRL-G_S*
+i_CTRL-G_s	surround.txt	/*i_CTRL-G_s*
 lib/projections.json	bundler.txt	/*lib\/projections.json*
 local_markfilelist	pi_netrw.txt	/*local_markfilelist*
 macros/rails.vim	rails.txt	/*macros\/rails.vim*
@@ -2095,6 +2100,13 @@ snippet	SnipMate.txt	/*snippet*
 snippet-syntax	SnipMate.txt	/*snippet-syntax*
 snippets	SnipMate.txt	/*snippets*
 standard-paragraph	tlib.txt	/*standard-paragraph*
+surround	surround.txt	/*surround*
+surround-customizing	surround.txt	/*surround-customizing*
+surround-issues	surround.txt	/*surround-issues*
+surround-mappings	surround.txt	/*surround-mappings*
+surround-replacements	surround.txt	/*surround-replacements*
+surround-targets	surround.txt	/*surround-targets*
+surround.txt	surround.txt	/*surround.txt*
 syntastic	syntastic.txt	/*syntastic*
 syntastic-about	syntastic.txt	/*syntastic-about*
 syntastic-aggregating-errors	syntastic.txt	/*syntastic-aggregating-errors*
@@ -2721,11 +2733,13 @@ unite/kinds/gista-file	vim-gista.txt	/*unite\/kinds\/gista-file*
 unite/sources/gista	vim-gista.txt	/*unite\/sources\/gista*
 unite/sources/gista_file	vim-gista.txt	/*unite\/sources\/gista_file*
 unite_default_key_mappings	unite.txt	/*unite_default_key_mappings*
+vS	surround.txt	/*vS*
 v_<C-y>,	emmet.txt	/*v_<C-y>,*
 v_<Plug>(unite_toggle_selected_candidates)	unite.txt	/*v_<Plug>(unite_toggle_selected_candidates)*
 v_X	exchange.txt	/*v_X*
 v_gc	commentary.txt	/*v_gc*
 v_sp	tlib.txt	/*v_sp*
+vgS	surround.txt	/*vgS*
 vim-easy-align	easy_align.txt	/*vim-easy-align*
 vim-gista	vim-gista.txt	/*vim-gista*
 vim-gista-author	vim-gista.txt	/*vim-gista-author*
@@ -2769,3 +2783,7 @@ xmpfilter-examples	xmpfilter.txt	/*xmpfilter-examples*
 xmpfilter-introduction	xmpfilter.txt	/*xmpfilter-introduction*
 xmpfilter-mappings	xmpfilter.txt	/*xmpfilter-mappings*
 xmpfilter-variables	xmpfilter.txt	/*xmpfilter-variables*
+yS	surround.txt	/*yS*
+ySS	surround.txt	/*ySS*
+ys	surround.txt	/*ys*
+yss	surround.txt	/*yss*

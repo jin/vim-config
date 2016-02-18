@@ -3,6 +3,7 @@ EasyGrep
 EvalSelection.vim
 JavaScript-Indent
 brainfuck-syntax
+cool.vim
 ctrlp.vim
 delimitMate
 emmet-vim
@@ -54,3 +55,4 @@ vim-scala
 vim-slim
 vim-snipmate
 vim-snippets
+vim-surround
