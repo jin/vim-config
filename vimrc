@@ -3,13 +3,24 @@
 
 if has('vim_starting')
    set nocompatible
-   set runtimepath=~/.vim/doload/*,/usr/share/vim/vimfiles/,/usr/local/Cellar/vim/7.4.273/share/vim/vim74/,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,~/.vim/bundle/neobundle.vim/
+   set runtimepath=/usr/local/Cellar/vim/7.4.1301/share/vim/vim74/,~/.vim/doload/*,/usr/share/vim/vimfiles/,/usr/share/vim/vimfiles/after,~/.vim/bundle/neobundle.vim/
+   let $VIMRUNTIME="/usr/local/Cellar/vim/7.4.1301/share/vim/vim74/"
 endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 
 NeoBundle 'tpope/vim-fugitive' " Git wrapper, needed for powerline
 NeoBundle 'Raimondi/delimitMate'
@@ -44,7 +55,7 @@ NeoBundle 'eiginn/netrw'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'elzr/vim-json' " Pretty JSON
 NeoBundle 'tommcdo/vim-exchange' " Exchange regions of words with cx
-NeoBundle 't9md/vim-ruby-xmpfilter' " Inline Ruby evaluation
+" NeoBundle 't9md/vim-ruby-xmpfilter'
 NeoBundle 'Keithbsmiley/swift.vim'
 NeoBundle 'tpope/vim-rsi' " Readline keybindings
 NeoBundle 'godlygeek/tabular'
@@ -53,11 +64,10 @@ NeoBundle 'trusktr/seti.vim' " colorscheme
 NeoBundle 'fatih/vim-go'
 NeoBundle 'vim-scripts/brainfuck-syntax'
 NeoBundle 'cakebaker/scss-syntax.vim'
-NeoBundle 'mxw/vim-jsx'
 NeoBundle 'justinj/vim-react-snippets'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'marijnh/tern_for_vim'
-NeoBundle 'ejamesc/JavaScript-Indent'
+" NeoBundle 'ejamesc/JavaScript-Indent'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'solarnz/thrift.vim'
 NeoBundle 'adimit/prolog.vim'
@@ -68,12 +78,18 @@ NeoBundle 'vim-scripts/multvals.vim'
 NeoBundle 'vim-scripts/EvalSelection.vim'
 NeoBundle 'vim-scripts/cool.vim'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'lervag/vimtex'
-
+NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
+NeoBundle 'davidzchen/vim-bazel'
+" NeoBundle 'ervandew/supertab'
+NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'mustache/vim-mustache-handlebars'
+NeoBundle 'rizzatti/dash.vim'
+NeoBundle 'jelera/vim-javascript-syntax', {'autoload': {'filetypes': ['javascript']}}
+NeoBundle 'mxw/vim-jsx', {'autoload': {'filetypes': ['javascript.jsx']}}
+NeoBundle 'Quramy/tsuquyomi'
+NeoBundle 'wizicer/vim-jison'
 
 " end of bundles
-
-" NeoBundle 'jelera/vim-javascript-syntax', {'autoload': {'filetypes': ['javascript']}}
 
 " Installation check.
 NeoBundleCheck
@@ -96,7 +112,7 @@ set lazyredraw
 
 " set nobackup
 " no viminfo files
-set viminfo=
+set viminfo=%,\"100,'10,/50,:100,h,f0,n~/.viminfo
 set backupdir=/tmp
 set directory=/tmp
 
@@ -125,22 +141,30 @@ set incsearch
 set ignorecase
 set smartcase
 
-"" Highlight trailing whitespaces
-"set list
-"set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/node_modules/*
+
+set cursorline
+
+set colorcolumn=80
+
+" Highlight trailing whitespaces
+" set list
+" set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 "" ..but don't do that in html and xml files
-autocmd filetype html,xml set listchars-=tab:>.
+au filetype html,xml set listchars-=tab:>.
 
 "" For markdown and text files
 " autocmd BufRead,BufNewFile *.md,*.txt,*.mdown,*.markdown setlocal spell spelllang=en_us textwidth=79 complete+=kspell
-autocmd BufRead,BufNewFile *.md,*.txt,*.mdown,*.markdown setlocal textwidth=79 complete+=kspell
+au BufRead,BufNewFile *.md,*.txt,*.mdown,*.markdown setlocal textwidth=79 complete+=kspell
+au BufRead,BufNewFile *.cu set filetype=cpp
+au BufRead,BufNewFile *.es6 setfiletype javascript
 
-"" Python PEP8 style
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
-
-"" Java style
 au FileType java set softtabstop=4 tabstop=4 shiftwidth=4
+au FileType typescript setlocal completeopt+=menu,preview,longest,menuone
+au FileType typescript nmap <buffer> <Leader>e <Plug>(TsuquyomiRenameSymbolC)
+au FileType typescript nmap <buffer> <Leader>r <Plug>(TsuquyomiReferences)
 
 "" Use system clipboard
 set clipboard=unnamed
@@ -151,6 +175,8 @@ set undodir=/tmp
 
 "" MacVim default font and size
 set guifont=Inconsolata-dz:h12
+set guioptions-=r
+set guioptions-=L
 
 "" No error and visual bells
 set noerrorbells
@@ -209,7 +235,7 @@ nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 map <leader><space> :noh<CR>
 
 "" Execute script
-nnoremap <F8><F8> :!./%<CR>
+" nnoremap <F8><F8> :!./%<CR>
 
 "" Sudo write a file
 cmap w!! w !sudo tee % >/dev/null
@@ -232,12 +258,6 @@ imap <buffer> <Leader>m <Plug>(xmpfilter-mark)
 """Plugins"""
 """""""""""""
 
-"" YCM
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-
-"" Command-T
-let g:CommandTMaxHeight=5
-
 "" NERDTree
 let g:NERDTreeWinSize = 20
 
@@ -251,28 +271,17 @@ let g:ctrlp_cmd = 'CtrlP'
 "" Neocomplete
 let g:neocomplete#enable_at_startup = 1
 
-" Rails autocomplete
-" let g:rubycomplete_rails = 1
-
 "" Disable delimiteMate for Rust source
 let delimitMate_excluded_ft = "rust,ml,ocaml"
 
-" Automatically enter
-" au VimEnter * Tagbar
-au VimEnter * NERDTree
-
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/node_modules/*
-
 let g:jsx_ext_required = 0
-autocmd BufRead,BufNewFile *.cu set filetype=cpp
 
 let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
 
-let g:evalSelectionRubyDir='~/.vim/bundle/EvalSelection.vim/ruby/'
-let g:evalSelectionOcamlInterpreter="ocaml"
-
-autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+" Automatically enter
+" au VimEnter * Tagbar
+au VimEnter * NERDTree
 
 " ## added by OPAM user-setup for vim / base ## 9a3a300d80f2faeb258825d3e0c1947c ## you can edit, but keep this line
 let s:opam_share_dir = system("opam config var share")
@@ -292,6 +301,7 @@ let s:opam_configuration['ocp-index'] = function('OpamConfOcpIndex')
 
 function! OpamConfMerlin()
   let l:dir = s:opam_share_dir . "/merlin/vim"
+  let g:merlin_completion_arg_type = "always"
   execute "set rtp+=" . l:dir
 endfunction
 let s:opam_configuration['merlin'] = function('OpamConfMerlin')
@@ -313,6 +323,12 @@ endif
 " ## end of OPAM user-setup addition for vim / ocp-indent ## keep this line
 
 autocmd FileType ocaml set commentstring=(*\ %s\ *)
+
+let g:LatexBox_latexmk_options = "-pvc -pdfps"
+let g:LatexBox_latexmk_async = 1
+let g:LatexBox_latexmk_preview_continuously = 1
+
+:nmap <silent> <leader>d <Plug>DashSearch
 
 filetype plugin indent on
 syntax enable
