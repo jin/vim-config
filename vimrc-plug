@@ -12,37 +12,20 @@ Plug 'scrooloose/nerdtree' " file browser
 Plug 'vim-scripts/Colour-Sampler-Pack' " pretty themes
 Plug 'tpope/vim-commentary' " easy commenting with gc
 Plug 'majutsushi/tagbar' " buffer to list tags
-Plug 'Lokaltog/vim-powerline' " status bar
-Plug 'wting/rust.vim' " syntax highlighting/indentation etc for Rust lang
+Plug 'vim-airline/vim-airline' " status bar
 Plug 'kien/ctrlp.vim' " fuzzy file finder
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-bundler'
 Plug 'vim-ruby/vim-ruby' " for ruby handling and autocompletion
-" Plug 'Shougo/neocomplete.vim' " autocompletion
 Plug 'tpope/vim-endwise' " for ruby
-Plug 'kchmck/vim-coffee-script'
 Plug 'genoma/vim-less'
-Plug 'rcyrus/snipmate-snippets-rubymotion'
-Plug 'slim-template/vim-slim'
 Plug 'elzr/vim-json' " Pretty JSON
-Plug 'Keithbsmiley/swift.vim'
 Plug 'tpope/vim-rsi' " Readline keybindings
 Plug 'trusktr/seti.vim' " colorscheme
-Plug 'fatih/vim-go'
-Plug 'cakebaker/scss-syntax.vim'
 Plug 'justinj/vim-react-snippets'
 Plug 'pangloss/vim-javascript'
-Plug 'derekwyatt/vim-scala'
 Plug 'solarnz/thrift.vim'
-Plug 'adimit/prolog.vim'
-Plug 'Shougo/unite.vim'
-Plug 'tyru/open-browser.vim'
-Plug 'lambdalisue/vim-gista'
-Plug 'vim-scripts/multvals.vim'
 Plug 'tpope/vim-surround'
 Plug 'davidzchen/vim-bazel'
 Plug 'leafgarland/typescript-vim'
-Plug 'mustache/vim-mustache-handlebars'
 Plug 'rizzatti/dash.vim'
 Plug 'jelera/vim-javascript-syntax', {'autoload': {'filetypes': ['javascript']}}
 Plug 'mxw/vim-jsx', {'autoload': {'filetypes': ['javascript.jsx']}}
@@ -50,7 +33,29 @@ Plug 'Quramy/tsuquyomi'
 Plug 'wizicer/vim-jison'
 Plug 'ternjs/tern_for_vim'
 Plug 'Valloric/YouCompleteMe'
-Plug 'bling/vim-airline'
+Plug 'alvan/vim-closetag'
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
+Plug 'tpope/vim-obsession'
+
+" Disabled
+" Plug 'tpope/vim-rails'
+" Plug 'tpope/vim-bundler'
+" Plug 'fatih/vim-go'
+" Plug 'kchmck/vim-coffee-script'
+" Plug 'wting/rust.vim' " syntax highlighting/indentation etc for Rust lang
+" Plug 'Shougo/neocomplete.vim' " autocompletion
+" Plug 'rcyrus/snipmate-snippets-rubymotion'
+" Plug 'slim-template/vim-slim'
+" Plug 'Keithbsmiley/swift.vim'
+" Plug 'cakebaker/scss-syntax.vim'
+" Plug 'derekwyatt/vim-scala'
+" Plug 'adimit/prolog.vim'
+" Plug 'Shougo/unite.vim'
+" Plug 'tyru/open-browser.vim'
+" Plug 'lambdalisue/vim-gista'
+" Plug 'vim-scripts/multvals.vim'
+" Plug 'mustache/vim-mustache-handlebars'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -281,6 +286,8 @@ let g:ctrlp_working_path_mode = 0
 autocmd FileType ocaml set commentstring=(*\ %s\ *)
 
 nmap <silent> <leader>d <Plug>DashSearch
+
+let g:notes_directories = ['~/workspace/notes']
 
 filetype plugin indent on
 syntax enable
