@@ -1,10 +1,6 @@
-" NeoBundle
-" ---------------------------------------------
-
 set nocompatible
 set number relativenumber
 set encoding=utf-8
-set laststatus=2 " Needed for Powerline
 set mouse=a
 set cinkeys-=0#
 set indentkeys-=0#
@@ -138,15 +134,9 @@ map <Leader>p <C-^>
 "" Yank whole file
 map yA :%y+<CR>
 
-"""""""""""""
-"""Plugins"""
-"""""""""""""
-
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/node_modules/*
 
 autocmd BufRead,BufNewFile *.cu set filetype=cpp
-
-autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 
 filetype plugin indent on
 syntax enable
